@@ -1,0 +1,60 @@
+{
+  "name": "tumblr.js",
+  "version": "1.1.1",
+  "description": "Official JavaScript client for the Tumblr API",
+  "main": "./lib/tumblr",
+  "scripts": {
+    "generate-docs": "rm -rf gh-pages && node_modules/.bin/jsdoc -c jsdoc.json",
+    "gh-pages": "git subtree push --prefix=gh-pages origin gh-pages",
+    "test": "gulp"
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "homepage": "https://github.com/tumblr/tumblr.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tumblr/tumblr.js.git"
+  },
+  "keywords": [
+    "tumblr",
+    "api"
+  ],
+  "author": "Tumblr",
+  "license": "Apache-2.0",
+  "contributors": [
+    {
+      "name": "Keith McKnight",
+      "email": "keith@mcknig.ht"
+    },
+    {
+      "name": "Bryan Irace",
+      "email": "bryan.irace@gmail.com"
+    },
+    {
+      "name": "John Crepezzi",
+      "email": "john.crepezzi@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "lodash": "^4.14.0",
+    "query-string": "^4.2.2",
+    "request": "^2.74.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-istanbul": "^1.0.0",
+    "gulp-mocha": "^2.2.0",
+    "hotdoc": "^0.7.1",
+    "jsdoc": "^3.4.0",
+    "json5": "^0.5.0",
+    "nock": "^8.0.0",
+    "semver": "^5.3.0"
+  },
+  "files": [
+    "/lib",
+    "/LICENSE"
+  ]
+}
