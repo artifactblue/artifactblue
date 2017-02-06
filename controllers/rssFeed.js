@@ -18,7 +18,9 @@
  * Home page.
  */
 exports.index = (req, res) => {
-  res.render('home', {
-    title: 'Home'
+  res.render('rssFeed', {
+    title: 'rssFeed',
+    categoryId: req.params.categoryId,
+    rssFeedId: req.params.rssFeedId,
   });
 };

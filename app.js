@@ -3,24 +3,24 @@
  */
 const express = require('express');
 const compression = require('compression');
-const session = require('express-session');
+// const session = require('express-session');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const chalk = require('chalk');
 const errorHandler = require('errorhandler');
-const lusca = require('lusca');
+// const lusca = require('lusca');
 const dotenv = require('dotenv');
-const MongoStore = require('connect-mongo')(session);
-const flash = require('express-flash');
+// const MongoStore = require('connect-mongo')(session);
+// const flash = require('express-flash');
 const path = require('path');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 const passport = require('passport');
 const expressValidator = require('express-validator');
 const expressStatusMonitor = require('express-status-monitor');
 // const sass = require('node-sass-middleware');
-const multer = require('multer');
+// const multer = require('multer');
 
-const upload = multer({ dest: path.join(__dirname, 'uploads') });
+// const upload = multer({ dest: path.join(__dirname, 'uploads') });
 
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
@@ -32,8 +32,10 @@ dotenv.load({ path: 'process.env' });
  * Controllers (route handlers).
  */
 const homeController = require('./controllers/home');
+const categoryController = require('./controllers/category');
+const rssFeedController = require('./controllers/rssFeed');
 const userController = require('./controllers/user');
-const apiController = require('./controllers/api');
+// const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 
 /**
@@ -117,6 +119,8 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
  * Primary app routes.
  */
 app.get('/', homeController.index);
+app.get('/i/:categoryId', categoryController.index);
+app.get('/i/:categoryId/:rssFeedId', rssFeedController.index);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
