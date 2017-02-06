@@ -13,7 +13,6 @@
     "test": "mocha --reporter spec"
   },
   "dependencies": {
-    "pg": "6.1.2",
     "async": "^2.1.2",
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.15.2",
@@ -36,6 +35,7 @@
     "lob": "^3.9.0",
     "lodash": "^4.16.6",
     "lusca": "^1.4.1",
+    "moment": "^2.17.1",
     "mongoose": "^4.6.6",
     "morgan": "^1.7.0",
     "multer": "^1.2.0",
@@ -53,6 +53,7 @@
     "passport-openid": "^0.4.0",
     "passport-twitter": "^1.0.4",
     "paypal-rest-sdk": "^1.7.0",
+    "pg": "6.1.2",
     "pug": "^2.0.0-beta6",
     "request": "^2.78.0",
     "stripe": "^4.12.0",
