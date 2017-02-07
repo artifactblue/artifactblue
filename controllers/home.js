@@ -1,15 +1,15 @@
-const moment = require('moment');
+const moment = require('moment')
 
-const category = require('../models/category');
-const rssFeed = require('../models/rssFeed');
-const rss = require('../models/rss');
+const category = require('../models/category')
+const rssFeed = require('../models/rssFeed')
+const rss = require('../models/rss')
 
 category.readAll().then(function(result){
-    // console.log('!!!', result.rowCount);
+    // console.log('!!!', result.rowCount)
 })
 
 rssFeed.readAll().then(function(result){
-    // console.log('???', result);
+    // console.log('???', result)
 })
 
 const URL_LENGTH = 60
