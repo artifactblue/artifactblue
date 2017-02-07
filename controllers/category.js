@@ -1,19 +1,9 @@
 const moment = require('moment')
-// var category = require('../models/category');
-// var rssFeed = require('../models/rssFeed');
 const rss = require('../models/rss')
 
 const RSS_LIMIT = 40
 const RSS_OFFSET = 0
-
 const URL_LENGTH = 60
-// category.readAll().then(function(result){
-//     // console.log('!!!', result.rowCount);
-// })
-
-// rssFeed.readAll().then(function(result){
-//     console.log('???', result);
-// })
 
 /**
  * GET /i/categoryId/
