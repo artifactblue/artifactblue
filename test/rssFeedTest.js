@@ -11,3 +11,7 @@ var entity = {
 rssFeed.create(entity).then(function(result){
 	console.log("insert success")
 });
+
+rssFeed.deleteAll().then(function(result){
+	console.log("delete success")
+});

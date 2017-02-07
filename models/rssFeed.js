@@ -21,4 +21,8 @@ RssFeed.prototype.update = function(entity) {
 
 }
 
+RssFeed.prototype.delete = function(id) {
+	return pool.query('DELETE FROM RssFeed WHERE id = $1', [id])
+};
+
 exports = module.exports = new RssFeed()
