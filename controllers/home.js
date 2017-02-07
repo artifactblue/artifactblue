@@ -39,7 +39,7 @@ exports.index = (req, res) => {
   rss.readAll(RSS_LIMIT, RSS_OFFSET).then(
     result => {
       result.rows.forEach( item => {
-        console.log('item', item)
+        // console.log('item', item)
         // change time format
         item.timeago = moment(item.createtimestamp).fromNow()
         if (item.rssurl.length > URL_LENGTH) {
