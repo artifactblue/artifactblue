@@ -3,8 +3,8 @@ extends layout
 block content
   h1= title + ' ' + categoryId
   p.lead Great news!
-  .row
   hr
+  .row
   each item in result
     .col-sm-6
       h2= item.rssname
