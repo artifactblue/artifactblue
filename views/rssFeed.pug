@@ -6,7 +6,7 @@ block content
   hr
   .row.grid
     each item in result
-      .grid-item.col-sm-6
+      .col-sm-6.grid-item
         h2= item.rssfeedtitle
         img(src=item.trimThumbnail, style='width: 100%;')
         p= item.trimRssurl
