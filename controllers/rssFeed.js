@@ -2,7 +2,7 @@ const moment = require('moment')
 const rssFeed = require('../models/rssFeed')
 
 const URL_LENGTH = 60
-const RSS_LIMIT = 20
+const RSS_LIMIT = 40
 /**
  * GET /
  * RSS feeds page.
