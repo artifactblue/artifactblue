@@ -10,6 +10,10 @@ RssFeed.prototype.readAll = function(limit = 3, offset = 0) {
     return pool.query('SELECT * FROM RssFeed ORDER BY id LIMIT ' + limit + ' OFFSET ' + offset)
 }
 
+RssFeed.prototype.readByRssId = function(rssId, limit = 3, offset = 0) {
+	return pool.query('SELECT * FROM RssFeed WHERE rssId = $1 ORDER BY id LIMIT ' + limit + ' OFFSET ' + offset, [rssId])
+}
+
 RssFeed.prototype.create = function(entity) {
 	// TODO should check if exists
 	return pool.query('INSERT INTO RssFeed (RssId, RssFeedTitle, RssFeedUrl, ReleaseDate, Thumbnail, RssFeedContent, CreateTimestamp) '
@@ -19,6 +23,10 @@ RssFeed.prototype.create = function(entity) {
 
 RssFeed.prototype.update = function(entity) {
 
+}
+
+RssFeed.prototype.deleteAll = function() {
+	return pool.query('DELETE FROM RssFeed')
 }
 
 RssFeed.prototype.delete = function(id) {
