@@ -26,6 +26,7 @@ exports.index = (req, res) => {
       } else {
         item.trimThumbnail = thumbnailString
       }
+      item.trimThumbnail = item.trimThumbnail.replace(/[' /]+$/,'')
     })
     // console.log('result.rows', result.rows)
     res.render('rssFeed', {
