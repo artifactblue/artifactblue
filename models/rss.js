@@ -20,9 +20,8 @@ Rss.prototype.create = function(entity) {
 		[entity.categoryId, entity.rssName, entity.rssUrl, entity.thumbnail]);
 }
 
-Rss.prototype.update = function(entity) {
-	return pool.query('UPDATE rss SET lastUpdateTimestamp = now() WHERE rssId = $1', 
-		[entity.rssId]);
+Rss.prototype.refreshUpdateTime = function(rssId) {
+	return pool.query('UPDATE rss SET lastUpdateTimestamp = now() WHERE rssId = $1', [rssId]);
 }
 
 exports = module.exports = new Rss()

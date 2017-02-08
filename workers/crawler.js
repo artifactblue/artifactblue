@@ -74,7 +74,11 @@ const getRssFeeds = (rssInfo) => {
         'rssFeedContent': item,
       }
       rssFeed.create(entity).then( () => {
-        console.log('insert success')
+        console.log(rssFeedTitle + ' insert success')
+        // refresh lastUpdateTimestamp on RSS table
+        rss.refreshUpdateTime(rssInfo.id).then( () => {
+          console.log(rssInfo.id + ' update success')
+        })
       })
       // console.log('@@@@@@@@', entity)
       feedNumber++
