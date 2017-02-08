@@ -4,15 +4,15 @@ block content
   h1= title + ' ' + categoryId + ' ' + rssFeedId
   p.lead Amazing~
   hr
-  .row
-  each item in result
-    .col-sm-6
-      h2= item.rssfeedtitle
-      img(src=item.trimThumbnail, style='width: 100%;')
-      p= item.trimRssurl
-      i= item.timeago
-      .row
-        .col-sm-1
-        .text-right
-          //- a.btn.btn-default(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »
-          a.btn.btn-default(href=item.rssfeedurl, role='button') View details »
+  .row.grid
+    each item in result
+      .grid-item.col-sm-6
+        h2= item.rssfeedtitle
+        img(src=item.trimThumbnail, style='width: 100%;')
+        p= item.trimRssurl
+        i= item.timeago
+        .row
+          .col-sm-1
+          .text-right
+            //- a.btn.btn-default(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »
+            a.btn.btn-default(href=item.rssfeedurl, role='button') View details »
