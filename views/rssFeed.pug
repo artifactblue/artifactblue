@@ -8,9 +8,11 @@ block content
   each item in result
     .col-sm-6
       h2= item.rssfeedtitle
-      p= item.rssfeedurl
+      img(src=item.trimThumbnail, style='width: 100%;')
+      p= item.trimRssurl
       i= item.timeago
       .row
         .col-sm-1
         .text-right
-          a.btn.btn-default(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »
+          //- a.btn.btn-default(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »
+          a.btn.btn-default(href=item.rssfeedurl, role='button') View details »

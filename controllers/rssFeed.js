@@ -2,21 +2,29 @@ const moment = require('moment')
 const rssFeed = require('../models/rssFeed')
 
 const URL_LENGTH = 60
+const RSS_LIMIT = 20
 /**
  * GET /
  * RSS feeds page.
  */
 exports.index = (req, res) => {
   // console.log('????', req.params.rssFeedId)
-  rssFeed.read(req.params.rssFeedId).then(function(result){
+  rssFeed.readByRssId(req.params.rssFeedId, RSS_LIMIT).then(function(result){
     // console.log('result', result)
     result.rows.forEach( item => {
       // console.log('item', item)
-      item.timeago = moment(item.createtimestamp).fromNow()
-      if (item.rssurl.length > URL_LENGTH) {
-        item.trimRssurl = item.rssurl.substring(0, URL_LENGTH - 3) + '...'
+      item.timeago = moment(item.releasedate).fromNow()
+      if (item.rssfeedurl.length > URL_LENGTH) {
+        item.trimRssurl = item.rssfeedurl.substring(0, URL_LENGTH - 3) + '...'
       } else {
-        item.trimRssurl = item.rssurl
+        item.trimRssurl = item.rssfeedurl
+      }
+      let thumbnailString = item.thumbnail
+      if(thumbnailString && thumbnailString.indexOf(',')>=0 ) {
+        let thumbnailSplit = thumbnailString.split(',')
+        item.trimThumbnail = thumbnailSplit[0]
+      } else {
+        item.trimThumbnail = thumbnailString
       }
     })
     // console.log('result.rows', result.rows)
