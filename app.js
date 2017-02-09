@@ -33,7 +33,7 @@ dotenv.load({ path: 'process.env' });
  */
 const homeController = require('./controllers/home');
 const categoryController = require('./controllers/category');
-const rssFeedController = require('./controllers/rssFeed');
+const rssController = require('./controllers/rss');
 const userController = require('./controllers/user');
 // const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
@@ -120,7 +120,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
  */
 app.get('/', homeController.index);
 app.get('/i/:categoryId', categoryController.index);
-app.get('/i/:categoryId/:rssFeedId', rssFeedController.index);
+app.get('/i/:categoryId/:rssId', rssController.index);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
