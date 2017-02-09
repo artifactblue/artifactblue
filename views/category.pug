@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h1: a(href=categoryUrl) #{categoryName}
+  h1: a(href='/i/' + categoryId)= categoryName
   p.lead Great news!
   hr
   .row

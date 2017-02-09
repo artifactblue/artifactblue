@@ -38,8 +38,6 @@ exports.index = (req, res) => {
           rssName: rssResult.rows[0].rssname,
           categoryId: req.params.categoryId,
           rssId: req.params.rssId,
-          categoryUrl: "/i/" + req.params.categoryId,
-          rssUrl: "/i/" + req.params.categoryId + "/" + req.params.rssId,
           result: result.rows,
         })
       })
