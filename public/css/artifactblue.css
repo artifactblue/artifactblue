@@ -4,7 +4,7 @@
 
 .grid-item li {
   width: 100%;
-  min-height: 600px;
+  min-height: 300px;
   display: block;
   float: left;
   list-style: none;
