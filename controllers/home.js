@@ -6,7 +6,7 @@ const rss = require('../models/rss')
 
 const CATEGORY_LIMIT = 10
 const CATEGORY_OFFSET = 1
-const CATEGORY_ARRAY = [1, 2, 3, 4, 5]
+const CATEGORY_ARRAY = [1, 2, 3, 4, 5, 6]
 
 const RSS_LIMIT = 40
 const RSS_OFFSET = 0

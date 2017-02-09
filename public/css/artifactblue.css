@@ -1,0 +1,30 @@
+.feedImage {
+  width: 100%;
+}
+
+.grid-item li {
+  width: 100%;
+  min-height: 600px;
+  display: block;
+  float: left;
+  list-style: none;
+  margin: 0 5px 5px 0;
+  background-color: white;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+li.is-loading {
+  background-color: white;
+  background-image: url('../images/balls_loading.gif');
+}
+
+li.is-broken {
+  background-color: white;
+  background-image: url('http://desandro.github.io/imagesloaded/assets/broken.png');
+}
+
+li.is-loading img,
+li.is-broken img {
+  opacity: 0;
+}

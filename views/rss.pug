@@ -7,13 +7,12 @@ block content
   hr
   .row.grid
     each item in result
-      .col-sm-6.grid-item
+      .col-sm-6.col-xs-12.grid-item
         h2= item.rssfeedtitle
-        img(src=item.trimThumbnail, style='width: 100%;')
+        li.is-loading
+          img(src=item.trimThumbnail, class='feedImage')
         p= item.trimRssurl
         i= item.timeago
-        .row
-          .col-sm-1
-          .text-right
-            //- a.btn.btn-default(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »
-            a.btn.btn-default(href=item.rssfeedurl, role='button') View details »
+        .text-right
+          //- a.btn.btn-default(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »
+          a.btn.btn-default(href=item.rssfeedurl, role='button') View details »

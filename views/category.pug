@@ -6,11 +6,9 @@ block content
   hr
   .row
   each item in result
-    .col-sm-6
+    .col-sm-6.col-xs-12
       h2= item.rssname
       p= item.trimRssurl
       i= item.timeago
-      .row
-        .col-sm-1
-        .text-right
-          a.btn.btn-default(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »
+      .text-right
+        a.btn.btn-default(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »
