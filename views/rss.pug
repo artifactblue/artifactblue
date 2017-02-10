@@ -14,5 +14,5 @@ block content
         p= item.trimRssurl
         i= item.timeago
         .text-right
-          //- a.btn.btn-default(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »
-          a.btn.btn-default(href=item.rssfeedurl, role='button') View details »
+          a.btn.btn-default(href='/i/' + categoryId + '/' + rssId + '/'  + item.id, role='button') View details »
+          //- a.btn.btn-default(href=item.rssfeedurl, role='button') View details »

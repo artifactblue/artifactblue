@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1: a(href='/i/' + categoryId)= categoryName + '/'
+    a(href='/i/' + rssId)= rssName
+  p.lead Amazing~
+  hr
+  .row.grid
+    .col-sm-12.col-xs-12.grid-item
+      h2= item.rssfeedtitle
+      li.is-loading
+        img(src=item.trimThumbnail, class='feedImage')
+      p= item.trimRssurl
+      p= rssfeedcontent.description
+      p= rssfeedcontent.summary
+      i= item.timeago
+      .text-right
+        //- a.btn.btn-default(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »
+        a.btn.btn-default(href=item.rssfeedurl, role='button') View details »

@@ -1,12 +1,12 @@
 {
-  "name": "hackathon-starter",
-  "version": "4.3.0",
-  "description": "A boilerplate for Node.js web applications",
+  "name": "Artifactblue",
+  "version": "2.0.0",
+  "description": "Content router",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sahat/hackathon-starter.git"
+    "url": "github.com/artifactblue/artifactblue"
   },
-  "author": "Sahat Yalkabov",
+  "author": "Yan",
   "license": "MIT",
   "scripts": {
     "start": "node app.js",
