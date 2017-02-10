@@ -15,9 +15,9 @@ Rss.prototype.readByCategoryId = function(categoryId, limit = 3, offset = 0) {
 }
 
 Rss.prototype.create = function(entity) {
-	return pool.query('INSERT INTO rss (CategoryId, RssName, RssUrl, Thumbnail, CreateTimestamp) '
-		+ ' VALUES ($1, $2, $3, $4, now())', 
-		[entity.categoryId, entity.rssName, entity.rssUrl, entity.thumbnail]);
+	return pool.query('INSERT INTO rss (CategoryId, RssName, RssUrl, Thumbnail, Description, CreateTimestamp) '
+		+ ' VALUES ($1, $2, $3, $4, $5, now())', 
+		[entity.categoryId, entity.rssName, entity.rssUrl, entity.description, entity.thumbnail]);
 }
 
 Rss.prototype.refreshUpdateTime = function(rssId) {

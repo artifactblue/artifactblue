@@ -15,9 +15,9 @@ Category.prototype.readAll = function(limit = 3, offset = 0) {
 }
 
 Category.prototype.create = function(entity) {
-	return pool.query('INSERT INTO category (Name, Thumbnail, CreateTimestamp) '
-		+ ' VALUES ($1, $2, now())', 
-		[entity.name, entity.thumbnail]);
+	return pool.query('INSERT INTO category (Name, Thumbnail, Description, CreateTimestamp) '
+		+ ' VALUES ($1, $2, $3, now())', 
+		[entity.name, entity.thumbnail, entity.description]);
 }
 
 Category.prototype.update = function(entity) {

@@ -72,6 +72,7 @@ const getRssFeeds = (rssInfo) => {
         'releaseDate': item.date,
         'thumbnail': imgUrl,
         'rssFeedContent': item,
+        'description': clearDescription
       }
       rssFeed.create(entity).then( () => {
         console.log(rssFeedTitle + ' insert success')

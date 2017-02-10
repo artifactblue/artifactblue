@@ -6,7 +6,8 @@ var entity = {
 	"rssFeedUrl": "http://www.google.com",
 	"releaseDate": "2017-02-06",
 	"thumbnail": "",
-	"rssFeedContent": "hi"
+	"rssFeedContent": "hi",
+	"description": ""
 }
 rssFeed.create(entity).then(function(result){
 	console.log("insert success")
