@@ -6,14 +6,14 @@ function onProgress( imgLoad, image ) {
   if ( !image.isLoaded ) {
     $item.addClass('is-broken');
   }
-}
+};
 
 $(document).ready(function() {
   var $container = $('.grid')
   $container.masonry({
     // options
     itemSelector: '.grid-item',
-  })
+  });
   $container.imagesLoaded()
   .progress( onProgress )
-})
+});
