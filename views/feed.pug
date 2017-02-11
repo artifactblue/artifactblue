@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1: a(href='/i/' + categoryId)= categoryName + '/'
-    a(href='/i/' + rssId)= rssName
+    a(href='/i/' + categoryId + '/' + rssId)= rssName
   p.lead Amazing~
   hr
   .row.grid
