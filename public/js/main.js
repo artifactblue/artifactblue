@@ -6,5 +6,4 @@ $(function() {
   .progress(function() {
     $grid.masonry()
   })
-  console.log('test')
 })

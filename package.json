@@ -13,6 +13,7 @@
     "test": "mocha --reporter spec"
   },
   "dependencies": {
+    "ajv": "^4.11.2",
     "async": "^2.1.2",
     "babel-eslint": "^7.1.1",
     "bcrypt-nodejs": "^0.0.3",
@@ -67,9 +68,9 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "eslint": "^3.9.1",
+    "eslint": "^3.13.0",
     "eslint-config-airbnb-base": "^11.0.0",
-    "eslint-plugin-import": "^2.1.0",
+    "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-react": "^6.9.0",
     "mocha": "^3.1.2",
     "sinon": "^1.17.6",
