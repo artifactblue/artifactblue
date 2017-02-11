@@ -9,7 +9,7 @@ block content
     each item in result
       .col-sm-6.col-xs-12.grid-item
         h2= item.rssfeedtitle
-        li.is-loading
+        li
           img(src=item.trimThumbnail, class='feedImage')
         p= item.trimRssurl
         i= item.timeago

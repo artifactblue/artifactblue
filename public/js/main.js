@@ -1,19 +1,10 @@
-// triggered after each item is loaded
-function onProgress( imgLoad, image ) {
-  // change class if the image is loaded or broken
-  var $item = $( image.img ).parent();
-  $item.removeClass('is-loading');
-  if ( !image.isLoaded ) {
-    $item.addClass('is-broken');
-  }
-};
-
-$(document).ready(function() {
-  var $container = $('.grid')
-  $container.masonry({
-    // options
+$(function() {
+  var $grid = $('.grid').masonry({
     itemSelector: '.grid-item',
   });
-  $container.imagesLoaded()
-  .progress( onProgress )
-});
+  $grid.imagesLoaded()
+  .progress(function() {
+    $grid.masonry()
+  })
+  console.log('test')
+})
