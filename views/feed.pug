@@ -11,8 +11,8 @@ block content
       li
         img(src=item.trimThumbnail, class='feedImage')
       p= item.trimRssurl
-      p= rssfeedcontent.description
-      p= rssfeedcontent.summary
+      p!= rssfeedcontent.description
+      //- p!= rssfeedcontent.summary
       i= item.timeago
       .text-right
         //- a.btn.btn-default(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »

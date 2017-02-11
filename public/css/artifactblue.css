@@ -5,6 +5,10 @@ body {
   word-break: break-all;
 }
 
+img {
+  width: 100%;
+}
+
 /*
   Feed and RSS styles
 */
