@@ -42,12 +42,17 @@ exports.index = (req, res) => {
         item.trimRssurl = getTrimRssurl(item.rssfeedurl)
         item.trimThumbnail = trimThumbnailString.replace(re, '')
 
+        const reImg = '/' + item.trimThumbnail + '/'
+        const rssfeedJSON = JSON.parse(item.rssfeedcontent)
+        const rssfeedDescription = rssfeedJSON.description
+        const trimRssfeedDescription = rssfeedDescription.replace(reImg, '')
+
         res.render('feed', {
           categoryName: categoryResult.rows[0].name,
           rssName: rssResult.rows[0].rssname,
           categoryId: req.params.categoryId,
           rssId: req.params.rssId,
-          rssfeedcontent: JSON.parse(item.rssfeedcontent),
+          rssfeedcontent: trimRssfeedDescription,
           item,
         })
       })

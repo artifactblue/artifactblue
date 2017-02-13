@@ -1,18 +1,36 @@
 extends layout
 
 block content
+  //- .card
+  //-   img(class='img-fluid', src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg', alt='Card image card')
+  //-   .card-block
+  //-     h4.card-title Card title
+  //-     p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+  //-     a.btn.btn-primary Button
   h1= title
-  p.lead Collect newest feeds
+    img(src='/images/dog.gif', style='width: 20px')
+    img(src='/images/dog.gif', style='width: 30px')
+    img(src='/images/dog.gif', style='width: 40px')
+  //- p.lead Collect newest feeds
   hr
   each categoryIndex in categoryArray
     .row
-    h1= categoryIndex
+    h1= categoryMap[categoryIndex]
     hr
     each item in result
       if categoryIndex == item.categoryid
+        //- .col-sm-6
+        //-   h2= item.rssname
+        //-   p= item.trimRssurl
+        //-   i= item.timeago
+        //-   .text-right
+        //-     a.btn.btn-default(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »
         .col-sm-6
-          h2= item.rssname
-          p= item.trimRssurl
-          i= item.timeago
-          .text-right
-            a.btn.btn-default(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »
+          .card
+            img(class='img-fluid', src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg', alt='Card image card')
+            .card-block
+              h4.card-title= item.rssname
+              p.card-text= item.trimRssurl
+              i= item.timeago
+              .text-right
+                a.btn.btn-primary(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »

@@ -3,16 +3,21 @@ extends layout
 block content
   h1: a(href='/i/' + categoryId)= categoryName + '/'
     a(href='/i/' + categoryId + '/' + rssId)= rssName
-  p.lead Amazing~
+  //- p.lead Amazing~
   hr
   .row.grid
     each item in result
       .col-sm-6.col-xs-12.grid-item
-        h2= item.rssfeedtitle
-        li
-          img(src=item.trimThumbnail, class='feedImage')
-        p= item.trimRssurl
-        i= item.timeago
-        .text-right
-          a.btn.btn-default(href='/i/' + categoryId + '/' + rssId + '/'  + item.id, role='button') View details »
-          //- a.btn.btn-default(href=item.rssfeedurl, role='button') View details »
+        .card
+          li
+            img(src=item.trimThumbnail, class='feedImage img-fluid')
+          .card-block
+            //- h2= item.rssfeedtitle
+            //- p= item.trimRssurl
+            //- i= item.timeago
+            h4.card-title= item.rssfeedtitle
+            p.card-text= item.trimRssurl
+            i= item.timeago
+            .text-right
+              a.btn.btn-primary(href='/i/' + categoryId + '/' + rssId + '/'  + item.id, role='button') View details »
+              //- a.btn.btn-default(href=item.rssfeedurl, role='button') View details »
