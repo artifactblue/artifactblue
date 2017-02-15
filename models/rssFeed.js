@@ -7,11 +7,11 @@ RssFeed.prototype.read = function(id) {
 }
 
 RssFeed.prototype.readAll = function(limit = 3, offset = 0) {
-  return pool.query('SELECT * FROM RssFeed ORDER BY id LIMIT ' + limit + ' OFFSET ' + offset)
+  return pool.query('SELECT * FROM RssFeed WHERE status = true ORDER BY id LIMIT ' + limit + ' OFFSET ' + offset)
 }
 
 RssFeed.prototype.readByRssId = function(rssId, limit = 3, offset = 0) {
-  return pool.query('SELECT * FROM RssFeed WHERE rssId = $1 ORDER BY id LIMIT ' + limit + ' OFFSET ' + offset, [rssId])
+  return pool.query('SELECT * FROM RssFeed WHERE rssId = $1 AND status = true ORDER BY id LIMIT ' + limit + ' OFFSET ' + offset, [rssId])
 }
 
 RssFeed.prototype.create = function(entity) {
