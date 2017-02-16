@@ -24,4 +24,8 @@ Rss.prototype.refreshUpdateTime = function(rssId) {
 	return pool.query('UPDATE rss SET lastUpdateTimestamp = now() WHERE rssId = $1', [rssId]);
 }
 
+Rss.prototype.updateRssImage = function(rssId, url) {
+  return pool.query('UPDATE rss SET thumbnail = $1 WHERE id = $2', [url, rssId] )
+}
+
 exports = module.exports = new Rss()

@@ -27,7 +27,10 @@ block content
         //-     a.btn.btn-default(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »
         .col-sm-6
           .card
-            img(class='img-fluid', src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg', alt='Card image card')
+            if item.thumbnail
+              img(class='img-fluid', src=item.thumbnail, alt='Card image card')
+            else
+              img(class='img-fluid', src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg', alt='Card image card')
             .card-block
               h4.card-title= item.rssname
               p.card-text= item.trimRssurl
