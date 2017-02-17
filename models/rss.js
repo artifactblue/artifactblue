@@ -2,6 +2,10 @@ var pool = require(__dirname + '/dbConnectionPool.js')
 
 function Rss() {}
 
+Rss.prototype.all = function() {
+	return pool.query('SELECT * FROM rss ORDER BY id')
+}
+
 Rss.prototype.read = function(id) {
     return pool.query('SELECT * FROM rss WHERE id = $1', [id])
 }
