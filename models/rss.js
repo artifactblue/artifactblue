@@ -28,4 +28,15 @@ Rss.prototype.updateRssImage = function(rssId, url) {
   return pool.query('UPDATE rss SET thumbnail = $1 WHERE id = $2', [url, rssId] )
 }
 
+Rss.prototype.rssCopyImageFromFeed = function(rssId, rssFeedId) {
+	var rssFeedSQL = ""
+	if (rssFeedId) {
+		rssFeedSQL += rssFeedId
+	} else {
+		rssFeedSQL += ' (SELECT max(id) FROM rssfeed WHERE rssid = ' + rssId + ' AND status = TRUE GROUP BY rssid) '
+	}
+	return pool.query('UPDATE rss SET thumbnail = (SELECT thumbnail FROM rssfeed WHERE id = ' + rssFeedSQL + ' ) WHERE id = $1', 
+		[rssId])
+}
+
 exports = module.exports = new Rss()
