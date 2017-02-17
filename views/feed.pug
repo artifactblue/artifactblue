@@ -4,8 +4,8 @@ block content
   h1: a(href='/i/' + categoryId)= categoryName + '/'
     a(href='/i/' + categoryId + '/' + rssId)= rssName
   hr
-  .row.grid
-    .col-sm-12.col-xs-12.grid-item
+  .row
+    .col-sm-12.col-xs-12
       .card
         li
           img(src=item.trimThumbnail, class='feedImage')
@@ -13,6 +13,10 @@ block content
           h4.card-title= item.rssfeedtitle
           p.card-text= item.trimRssurl
           p.card-text!= trimRssfeedDescription
+          .row.grid
+            each feedImage in item.feedImages
+              .col-sm-6.col-xs-12.grid-item
+                img(src=feedImage, class='feedImage img-fluid')
           i= item.timeago
           .text-right
             //- a.btn.btn-default(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »

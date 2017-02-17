@@ -17,6 +17,8 @@ block content
             //- i= item.timeago
             h4.card-title= item.rssfeedtitle
             p.card-text= item.trimRssurl
+            //- each feedImage in item.feedImages
+            //-   img(src=feedImage, class='feedImage img-fluid')
             i= item.timeago
             .text-right
               a.btn.btn-primary(href='/i/' + categoryId + '/' + rssId + '/'  + item.id, role='button') View details »
