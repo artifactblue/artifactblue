@@ -1,4 +1,6 @@
 const MetaInspector = require('node-metainspector')
+const imagesize = require('imagesize')
+const http = require('http')
 
 const moment = require('moment')
 const rss = require('../models/rss')
@@ -32,8 +34,29 @@ rss.readAll(RSS_LIMIT, RSS_OFFSET).then(
         // console.log('Description: ' + client.description)
         if(client.image === undefined) {
           // console.log('---Image:' + client.images[0])
-          if(client.images[0] !== undefined) {
-            var imageUrl = client.images[3]
+          // console.log('---Image.size:' + client.images.length)
+          if(client.images[0] !== undefined && client.images.length > 0) {
+            //console.log('##', client.images)
+            for(var i = 0; i < client.images.length; i++) {
+              const img = client.images[i]
+              // console.log('img: ' + img)
+              if ((/http(s?):\.(gif|jpg|jpeg|tiff|png)$/i).test(img)) {
+                var saveImg = false
+                const request = http.get(img, function (response) {
+                  imagesize(response, function (err, result) {
+                    if (result.width > 100 && result.height > 100) {
+                      var imageUrl = img
+                      saveImg = true
+                      console.log('imageUrl: ' + imageUrl)
+                      request.abort()
+                    }
+                  })
+                })
+              }
+              if (saveImg === true) {
+                break
+              }
+            }
           }
         } else {
           var imageUrl = client.image
