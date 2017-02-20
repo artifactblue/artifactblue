@@ -16,11 +16,11 @@ RssFeed.prototype.readByRssId = function(rssId, limit = 3, offset = 0) {
 
 RssFeed.prototype.create = function(entity) {
 	// TODO should check if exists
-  return pool.query('INSERT INTO RssFeed (RssId, RssFeedTitle, RssFeedUrl, ReleaseDate, Thumbnail, RssFeedContent, CreateTimestamp) '
+  return pool.query('INSERT INTO RssFeed (RssId, RssFeedTitle, RssFeedUrl, ReleaseDate, Thumbnail, RssFeedContent, description, CreateTimestamp) '
 		+ ' SELECT $1, $2, $3, $4, $5, $6, $7, now() WHERE NOT EXISTS '
 		+ ' (SELECT 1 FROM RssFeed WHERE RssId = $8 AND RssFeedTitle = $9 AND RssFeedUrl = $10 AND RssFeedContent = $11)',
 		[entity.rssId, entity.rssFeedTitle, entity.rssFeedUrl, entity.releaseDate, entity.thumbnail, entity.rssFeedContent, entity.description,
-		entity.rssId, entity.rssFeedTitle, entity.rssFeedUrl, entity.rssFeedContent, entity.description]);
+		entity.rssId, entity.rssFeedTitle, entity.rssFeedUrl, entity.rssFeedContent]);
 }
 
 RssFeed.prototype.update = function(entity) {

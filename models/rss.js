@@ -25,7 +25,7 @@ Rss.prototype.create = function(entity) {
 }
 
 Rss.prototype.refreshUpdateTime = function(rssId) {
-	return pool.query('UPDATE rss SET lastUpdateTimestamp = now() WHERE rssId = $1', [rssId]);
+	return pool.query('UPDATE rss SET lastUpdateTimestamp = now() WHERE id = $1', [rssId]);
 }
 
 Rss.prototype.updateRssImage = function(rssId, url) {
