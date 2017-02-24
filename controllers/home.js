@@ -6,7 +6,7 @@ const rss = require('../models/rss')
 
 const CATEGORY_LIMIT = 10
 const CATEGORY_OFFSET = 0
-const CATEGORY_ARRAY = [/*1, 2, 3, 4, 5, 6, 7, 8*/]
+var CATEGORY_ARRAY = [/*1, 2, 3, 4, 5, 6, 7, 8*/]
 var CATEGORY_MAP = {
   // 1: '資訊',
   // 2: '正妹',
