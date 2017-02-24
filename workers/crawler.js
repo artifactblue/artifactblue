@@ -75,10 +75,12 @@ const getRssFeeds = (rssInfo) => {
         'description': clearDescription
       }
       rssFeed.create(entity).then( () => {
-        console.log(rssFeedTitle + ' insert success')
+        console.log(entity.rssFeedTitle + ' insert success')
         // refresh lastUpdateTimestamp on RSS table
         rss.refreshUpdateTime(rssInfo.id).then( () => {
           console.log(rssInfo.id + ' update success')
+        }).catch(function(err){
+          console.log(rssInfo.id, err.message)
         })
       })
       // console.log('@@@@@@@@', entity)
