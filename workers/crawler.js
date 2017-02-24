@@ -65,6 +65,9 @@ const getRssFeeds = (rssInfo) => {
       feedLink = feedLink.replace(/^http:\/\//i, 'https://')
       // console.log('Got clearDescription: %s', trimDescription)
       // Write feeds to DB
+      if (imgUrl == 'httpnull') {
+        imgUrl = 'https://i.imgur.com/l6rRHkX.jpg'
+      }
       entity = {
         'rssId': rssInfo.id,
         'rssFeedTitle': item.title,
