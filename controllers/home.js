@@ -66,7 +66,7 @@ exports.index = (req, res) => {
         }
       })
       res.render('home', {
-        title: null,
+        title: '',
         categoryArray: CATEGORY_ARRAY,
         categoryMap: CATEGORY_MAP,
         result: result.rows,

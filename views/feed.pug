@@ -16,7 +16,7 @@ block content
             each feedImage in item.feedImages
               .col-sm-6.col-xs-12.grid-item
                 img(src=feedImage, class='feedImage img-fluid')
-          i= item.timeago
           .text-right
+            i= item.timeago
             //- a.btn.btn-default(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »
-            a.btn.btn-primary(href=item.rssfeedurl, role='button', target='_blank') View website »
+            //- a.btn.btn-primary(href=item.rssfeedurl, role='button', target='_blank') View website »
