@@ -6,22 +6,23 @@
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href='/')
-        img(class='img-logo', src='images/dogdog.png', alt='dog')
+      //- a.navbar-brand(href='/')
+      a(href='/')
+        //- i.fa.fa-cube
+        //- | 圖文狗
+        img(src='/images/1487524667677.png', style='width: 50px')
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         each categoryIndex in categoryArray
           li(class=(title == categoryMap[categoryIndex]) ? 'active' : undefined)
             a(href='/i/' + categoryIndex)=  categoryMap[categoryIndex]
 
-      //- li(class=(title == 'Home') ? 'active' : undefined)
-      //-   a(href='/') Home
-      //- li(class=(title == '電影') ? 'active' : undefined)
-      //-   a(href='/i/3/9') 電影
-      //- li(class=(title == '正妹') ? 'active' : undefined)
-      //-   a(href='/i/2/5') 正妹
-      //- li(class=(title == '資訊') ? 'active' : undefined)
-      //-   a(href='/i/1/1') 資訊
+        //- li(class=(title == '電影') ? 'active' : undefined)
+        //-   a(href='/i/3/9') 電影
+        //- li(class=(title == '正妹') ? 'active' : undefined)
+        //-   a(href='/i/2/5') 正妹
+        //- li(class=(title == '資訊') ? 'active' : undefined)
+        //-   a(href='/i/1/1') 資訊
         //- li(class=(title == 'API Examples') ? 'active' : undefined)
         //-   a(href='/api') API Examples
         //- li(class=(title == 'Contact') ? 'active' : undefined)
