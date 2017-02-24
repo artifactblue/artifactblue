@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  .row.card(style='height: 50%; text-align: center;')
+    img(class='img-fluid', src='/images/dog.svg', alt='Card image card')
+    .card-block
+      h1.card-title 關於圖文狗
+      img(src='http://qr-official.line.me/L/BCeCuknfnN.png' style='max-width: 300px;')
+      br
+      a(href='https://line.me/R/ti/p/%40pmv3976p')
+        img(height='36' src='https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png' style='width: 110px;')
+      h3.card-text= description
+  //- p.lead Collect newest feeds
+//-   each categoryIndex in categoryArray
+//-     .row
+//-     h1= categoryMap[categoryIndex]
+//-     each item in result
+//-       if categoryIndex == item.categoryid
+//-         //- .col-sm-6
+//-         //-   h2= item.rssname
+//-         //-   p= item.trimRssurl
+//-         //-   i= item.timeago
+//-         //-   .text-right
+//-         //-     a.btn.btn-default(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »
+//-         .col-sm-6
+//-           .card
+//-             if item.thumbnail
+//-               a(href='/i/' + item.categoryid + '/' + item.id, role='button')
+//-                 img(class='img-fluid', src=item.thumbnail, alt='Card image card')
+//-             else
+//-               a(href='/i/' + item.categoryid + '/' + item.id, role='button')
+//-                 img(class='img-fluid', src='/images/dog.svg', alt='Card image card')
+//-             .card-block
+//-               h4.card-title= item.rssname
+//-               //- p.card-text= item.trimRssurl
+//-               .text-right
+//-                 i= item.timeago
+//-                 //- a.btn.btn-primary(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »

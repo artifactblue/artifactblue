@@ -125,6 +125,8 @@ app.get('/', homeController.index)
 app.get('/i/:categoryId', categoryController.index)
 app.get('/i/:categoryId/:rssId', rssController.index)
 app.get('/i/:categoryId/:rssId/:feedId', feedController.index)
+app.get('/about', homeController.about)
+
 app.get('/login', userController.getLogin)
 app.post('/login', userController.postLogin)
 app.get('/logout', userController.logout)

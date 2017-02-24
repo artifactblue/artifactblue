@@ -16,7 +16,8 @@
         each categoryIndex in categoryArray
           li(class=(title == categoryMap[categoryIndex]) ? 'active' : undefined)
             a(href='/i/' + categoryIndex)=  categoryMap[categoryIndex]
-
+        li(class=(title == '關於') ? 'active' : undefined)
+          a(href='/about') 關於
         //- li(class=(title == '電影') ? 'active' : undefined)
         //-   a(href='/i/3/9') 電影
         //- li(class=(title == '正妹') ? 'active' : undefined)
