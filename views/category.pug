@@ -8,8 +8,8 @@ block content
   each item in result
     .col-sm-6.col-xs-12
       .card
-        img(class='img-fluid', src=item.thumbnail, alt='Card image card'
-        href='/i/' + item.categoryid + '/' + item.id, role='button')
+        a(href='/i/' + item.categoryid + '/' + item.id, role='button')
+          img(class='img-fluid', src=item.thumbnail, alt='Card image card')
         .card-block
           h4.card-title= item.rssname
           //- p.card-text= item.trimRssurl

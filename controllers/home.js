@@ -66,7 +66,7 @@ exports.index = (req, res) => {
         }
       })
       res.render('home', {
-        title: '圖文狗',
+        title: '',
         categoryArray: CATEGORY_ARRAY,
         categoryMap: CATEGORY_MAP,
         result: result.rows,
