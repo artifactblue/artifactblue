@@ -3,16 +3,15 @@ extends layout
 block content
   h1: a(href='/i/' + categoryId)= categoryName
   //- p.lead Great news!
-  hr
-  .row
-  each item in result
-    .col-sm-6.col-xs-12
-      .card
-        a(href='/i/' + item.categoryid + '/' + item.id, role='button')
-          img(class='img-fluid', src=item.thumbnail, alt='Card image card')
-        .card-block
-          h4.card-title= item.rssname
-          //- p.card-text= item.trimRssurl
-          .text-right
-            i= item.timeago
-          //-   a.btn.btn-primary(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »
+  .row.grid
+    each item in result
+      .col-sm-6.col-xs-12
+        .card
+          a(href='/i/' + item.categoryid + '/' + item.id, role='button')
+            img(class='img-fluid', src=item.thumbnail, alt='Card image card')
+          .card-block
+            h4.card-title= item.rssname
+            //- p.card-text= item.trimRssurl
+            .text-right
+              i= item.timeago
+            //-   a.btn.btn-primary(href='/i/' + item.categoryid + '/' + item.id, role='button') View details »
