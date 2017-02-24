@@ -101,6 +101,12 @@ li.is-broken img {
 
 .navbar-inverse .navbar-nav > li > a {
   font-size: 24px;
+  color: #fff;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  font-size: 24px;
+  color: #354154;
 }
 
 h1 a {

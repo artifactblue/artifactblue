@@ -9,7 +9,9 @@ block content
       .col-sm-6.col-xs-12.grid-item
         .card
           li
-            a(href='/i/' + categoryId + '/' + rssId + '/'  + item.id, role='button')
+            //- a(href='/i/' + categoryId + '/' + rssId + '/'  + item.id, role='button')
+            //-   img(src=item.trimThumbnail, class='feedImage img-fluid')
+            a(href=item.rssfeedurl, role='button')
               img(src=item.trimThumbnail, class='feedImage img-fluid')
           .card-block
             //- h2= item.rssfeedtitle
