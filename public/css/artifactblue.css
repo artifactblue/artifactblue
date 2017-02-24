@@ -4,13 +4,16 @@
 body {
   word-break: break-all;
   padding-top: 50px;
-  background: #eee;
+  background: #b8c0cc;
 }
 
 img {
   width: 100%;
 }
 
+hr {
+  border-color: rgba(0,0,0,0.12);
+}
 /*
   Home card
 */
@@ -27,11 +30,20 @@ img {
   -ms-flex-direction: column;
   flex-direction: column;
   background-color: #fff;
-  border: 1px solid rgba(0,0,0,.125);
+  /*border: 1px solid rgba(0,0,0,.125);*/
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   border-radius: .25rem;
   margin-bottom: 2rem;
 }
 
+.navbar-inverse {
+  background-color: #354154;
+  border-color: #354154;
+}
+.img-logo {
+  width: 120px;
+  margin-top: -10px;
+}
 .img-fluid {
   max-width: 100%;
   height: auto;
