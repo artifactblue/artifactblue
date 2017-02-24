@@ -89,7 +89,7 @@ exports.index = (req, res) => {
           item.feedImages = Images
           res.render('feed', {
             categoryName: categoryResult.rows[0].name == undefined ? '' : categoryResult.rows[0].name,
-            rssName: rssResult.rows[0].rssname,
+            rssName: rssResult.rows[0].rssname == undefined ? '' : rssResult.rows[0].rssname,
             categoryId: req.params.categoryId,
             rssId: req.params.rssId,
             rssfeedcontent: trimRssfeedDescription,
