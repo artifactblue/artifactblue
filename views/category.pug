@@ -5,7 +5,7 @@ block content
   //- p.lead Great news!
   .row.grid
     each item in result
-      .col-sm-6.col-xs-12
+      .col-sm-6.col-xs-12.grid-item
         .card
           a(href='/i/' + item.categoryid + '/' + item.id, role='button')
             img(class='img-fluid', src=item.thumbnail, alt='Card image card')
