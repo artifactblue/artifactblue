@@ -116,7 +116,11 @@ app.use((req, res, next) => {
 // })
 
 // Remove cache
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
+app.use(express.static(path.join(__dirname, 'public'), {
+  etag: true,
+  /*  60secs */
+  maxAge: 60,
+}))
 
 /**
  * Primary app routes.
