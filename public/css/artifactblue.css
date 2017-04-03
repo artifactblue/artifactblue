@@ -74,32 +74,6 @@ hr {
   width: 100%;
 }
 
-.grid-item {
-  width: 100%;
-  display: block;
-  float: left;
-  list-style: none;
-  margin: 0 5px 5px 0;
-  background: white;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-li.is-loading {
-  background: white;
-  background-image: url('../images/balls_loading.gif');
-}
-
-li.is-broken {
-  background: white;
-  background-image: url('http://desandro.github.io/imagesloaded/assets/broken.png');
-}
-
-li.is-loading img,
-li.is-broken img {
-  opacity: 0;
-}
-
 /*
   fix main.css
 */
