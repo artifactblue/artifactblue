@@ -117,9 +117,9 @@ app.use((req, res, next) => {
 
 // Remove cache
 app.use(express.static(path.join(__dirname, 'public'), {
-  etag: true,
-  /*  60secs */
-  maxAge: 60,
+  etag: false,
+  /*  0 secs */
+  maxAge: 0,
 }))
 
 /**
